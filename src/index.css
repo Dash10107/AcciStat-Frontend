@@ -11,6 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+.fill-button {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fill-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  z-index: -1;
+  transition: width 0.5s ease-out;
+}
+
+.fill-button:hover::before {
+  width: 100%;
+}
+
+
+
 
 @tailwind base;
 @tailwind components;
