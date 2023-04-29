@@ -16,9 +16,11 @@ const ReportForm = () => {
 
   // geolocation
   navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position.coords.longitude);
-    console.log(position.coords.latitude);
-    console.log(position.coords.altitude);
+
+    // Un-necessary sh!t
+    // console.log(position.coords.longitude);
+    // console.log(position.coords.latitude);
+    // console.log(position.coords.altitude);
     setLong(position.coords.longitude);
     setLat(position.coords.latitude);
     setAlt(position.coords.altitude);
@@ -38,6 +40,7 @@ const ReportForm = () => {
   });
 
   const handleChange = (event) => {
+    // console.log(event.target.value);
     const { name, value } = event.target;
     setAcc({ ...acc, [name]: value });
   };
@@ -137,11 +140,11 @@ const ReportForm = () => {
                   className="border w-[100%] h-7 rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300"
                   onChange={handleChange}
                 /> */}
-                <select id="causes" name="causes" className="border px-4 w-[100%] h-7 rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300">
-                  <option value="2">Two-wheeler</option>
-                  <option value="3">Three-wheeler</option>
-                  <option value="4">Four-wheeler</option>
-                  <option value="4+">Four-wheeler+</option>
+                <select id="causes" name="aType" value={acc.aType} onChange={handleChange} className="border px-4 w-[100%] h-7 rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300">
+                  <option value="Two-wheeler"  >Two-wheeler</option>
+                  <option value="Three-wheeler" >Three-wheeler</option>
+                  <option value="Four-wheeler" >Four-wheeler</option>
+                  <option value="Four-wheeler+">Four-wheeler+</option>
                 </select>
               </div>
 
@@ -183,12 +186,13 @@ const ReportForm = () => {
                   className="border w-[100%] rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300"
                   onChange={handleChange}
                 ></textarea> */}
-                <select id="causes" name="causes" className="border px-4 w-[100%] h-7 rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300">
-                  <option value="overspeed">Over Speeding</option>
-                  <option value="drink">Drink & Drive</option>
-                  <option value="road">On-road property</option>
-                  <option value="wronglane">Wrong Lane</option>
-                  <option value="underage">UnderAge driving</option>
+                <select id="causes" name="aCause" value={acc.aCause} onChange={handleChange} className="border px-4 w-[100%] h-7 rounded-md hover:shadow-md hover:shadow-blue-200 transition duration-300">
+                  <option value="Over Speeding"   >Over Speeding</option>
+                  <option value="Drink & Drive"   >Drink & Drive</option>
+                  <option value="On-road Property">On-road property</option>
+                  <option value="Wrong Lane"    >Wrong Lane</option>
+                  <option value="UnderAge Driving" >UnderAge driving</option>
+                  <option value="Distraction">Distraction</option>
                 </select>
               </div>
 
