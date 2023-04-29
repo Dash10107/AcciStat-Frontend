@@ -19,6 +19,7 @@ const All = () => {
   };
   useEffect(() => {
     getList();
+    console.log(accs[0].title);
   }, [])
   
   return (
@@ -27,9 +28,15 @@ const All = () => {
         <h1 className='text-3xl p-3 text-red-600'>Most Lethal Accidents : <span className='text-lg text-black'>Must read for safety purposes</span></h1>
         <div id="cards" className='flex'>
 
-{/* card 1 */}
-<div> 
-</div>
+          {/* Card */}
+          <div id="card-body">
+            <div id="title"></div>
+            <div id="type"></div>
+            <div id="cause"></div>
+            <div id="location"></div>
+            <div id="onRoadProperty"></div>
+          </div>
+
           
         </div>
       </div>

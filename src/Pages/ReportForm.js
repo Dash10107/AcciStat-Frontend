@@ -32,7 +32,7 @@ const ReportForm = () => {
   const [acc, setAcc] = useState({
     aTitle: "",
     aType: "",
-    aCausal: "",
+    aCasual: "",
     aInjure: "",
     aCause: "",
     aLoc: "",
@@ -47,7 +47,7 @@ const ReportForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (acc.aTitle === "" || acc.aCausal === "" || acc.aInjure === "" ||   acc.aLoc === "" || acc.aDam === ""){
+    if (acc.aTitle === "" || acc.aCasual === "" || acc.aInjure === "" ||   acc.aLoc === "" || acc.aDam === ""){
       toast.error("Please fill all the fields");
     }else{
       submitAccident();
@@ -62,7 +62,7 @@ const ReportForm = () => {
         setAcc({
           aTitle: "",
           aType: "",
-          aCausal: "",
+          aCasual: "",
           aInjure: "",
           aCause: "",
           aLoc: "",
@@ -155,8 +155,8 @@ const ReportForm = () => {
                   <p>No. of casualties:</p>
                   <input
                     type="number"
-                    value={acc.aCausal}
-                    name="aCausal"
+                    value={acc.aCasual}
+                    name="aCasual"
                     className="border w-[90%] h-7 rounded-md py-4 px-2 hover:shadow-md hover:shadow-blue-200 transition duration-300"
                     onChange={handleChange}
                   />
